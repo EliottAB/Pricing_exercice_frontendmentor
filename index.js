@@ -30,12 +30,30 @@ slideButton.addEventListener("mousedown", ()=>{
     slideButton.style.backgroundColor = "hsl(174, 86%, 45%)"
 })
 
+slideButton.addEventListener("touchstart", ()=>{
+    followMouse = true
+    slideButton.style.backgroundColor = "hsl(174, 86%, 45%)"
+})
+
 window.addEventListener("mouseup", ()=>{
     followMouse = false
     slideButton.style.backgroundColor = ""
 })
 
+window.addEventListener("touchend", ()=>{
+    followMouse = false
+    slideButton.style.backgroundColor = ""
+})
+
 window.addEventListener("mousemove", (e)=>{
+    MoveBar(e)
+})
+
+window.addEventListener("touchmove", (e)=>{
+    MoveBar(e.touches[0])
+})
+
+function MoveBar(e){
     mouseX = e.clientX
     let mouseMid = mouseX - document.documentElement.clientWidth/2
     let barWidth = slideBar.offsetWidth/2
@@ -58,7 +76,7 @@ window.addEventListener("mousemove", (e)=>{
         UpdatePrice()
         slideBar.style.background = `linear-gradient(to left, hsl(224, 65%, 95%) ${100}%, hsl(174, 77%, 80%) ${100}%)`
     }
-})
+}
 
 function UpdatePrice(){
     displayedPrice.innerHTML = switchOn ? "$" + (pricing*12).toFixed(2) : "$" + pricing.toFixed(2)
