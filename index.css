@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: "manrope";
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+    font-size: 16px;
+    background-color: hsl(230, 100%, 99%);
+}
+
+.background-decoration{
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 54%;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 7em;
+}
+
+header img{
+    position: absolute;
+    z-index: -1;
+    width: 12em;
+}
+
+header h1{
+    margin-bottom: .5em;
+    font-size: 2.4em;
+    color: hsl(227, 35%, 25%);
+}
+
+header p{
+    font-size: 1.2em;
+    color: hsl(225, 20%, 60%);
+}
+
+.home-main{
+    width: 46em;
+    margin-top: 6em;
+    box-shadow: 0 1em 2em -1.2em hsl(225, 20%, 60%);
+    border-radius: 1em;
+    background-color: white;
+}
+
+.card-top{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
+    border-bottom: hsl(224, 65%, 95%) .15em solid;
+}
+
+.pricing-infos{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.pricing-infos p{
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    color: hsl(225, 20%, 60%);
+}
+
+.pricing-infos .pricing{
+    margin-right: .2em;
+    font-size: 3em;
+    font-weight: 800;
+    color: hsl(227, 35%, 25%);
+}
+
+.slide-price{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+
+.slide-price .slide-bar{
+    position: relative;
+    height: 1em;
+    width: 40em;
+    border-radius: 100vw;
+    background: linear-gradient(to left, hsl(224, 65%, 95%) 50%, hsl(174, 77%, 80%) 50%);
+}
+
+.slide-price .slide-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -1.9em;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: hsl(174, 77%, 88%);
+    transition: background-color .1s;
+}
+
+.slide-price .slide-button img{
+    width: 2em;
+}
+
+.slide-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6em;
+    margin-top: 1.5em;
+}
+
+.slide-options .switch{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 3.5em;
+    height: 1.8em;
+    border-radius: 100vw;
+    cursor: pointer;
+    background-color: hsl(225, 20%, 85%);
+    transition: background-color .2s;
+}
+
+.slide-options .switch-circle{
+    position: absolute;
+    width: 1.3em;
+    height: 1.3em;
+    left: 6%;
+    border-radius: 50%;
+    background-color: white;
+    transition: left .2s;
+}
+
+.slide-options p{
+    color: hsl(225, 20%, 60%);
+}
+
+.slide-options p:last-child::after{
+    content: "25% discount";
+    position: relative;
+    left: 1em;
+    padding: .3em .5em;
+    border-radius: 100vw;
+    color: hsl(15, 100%, 70%);
+    background-color: hsl(14, 92%, 95%);
+}
+
+.card-bottom{
+    display: flex;
+    height: 10em;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.5em;
+}
+
+.avantages{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.avantages p{
+    color: hsl(225, 20%, 60%);
+}
+
+.avantages p img{
+    margin-right: 1em;
+    width: .8em;
+}
+
+.start-trial-button{
+    padding: 1.2em 4.3em;
+    border-radius: 100vw;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: hsl(227, 35%, 25%);
+}
+
+@media screen and (max-width: 780px){
+    body{
+        font-size: 2.05128205vw;
+    }
+
+    header p{
+        width: 60%;
+        font-size: 1.6em;
+        text-align: center;
+    }
+
+    .home-main{
+        width: 42em;
+    }
+
+    .pricing-infos{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-infos p:first-child{
+        margin-bottom: 1.2em;
+        font-size: 2em;
+    }
+
+    .slide-price{
+        margin-top: 5em;
+    }
+
+    .slide-price, .slide-bar{
+        width: 35em !important;
+    }
+
+    .slide-button{
+        font-size: 1.8em;
+    }
+
+    .slide-options{
+        font-size: 1.5em;
+    }
+
+    .slide-options p:last-child::after{
+        content: "25%";
+    }
+
+    .card-bottom{
+        flex-direction: column;
+        height: 14em;
+        font-size: 1.5em;
+        margin-top: 2em;
+    }
+
+    .avantages{
+        align-items: center;
+    }
+
+    .start-trial-button{
+        margin-bottom: 2em;
+    }
+}
